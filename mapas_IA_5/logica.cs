@@ -8,23 +8,25 @@ namespace mapas_IA_5
 {
     internal class logica
     {
+        // inicializacion de los nodos
+        static nodo aquila = new nodo("aquila");
+        static nodo maruata = new nodo("maruata");
+        static nodo tepalcatepec = new nodo("tepalcatepec");
+        static nodo apatzingan = new nodo("apatzingan");
+        static nodo nueva_italia = new nodo("nueva italia");
+        static nodo lazaro_cardenas = new nodo("lazaro cardenas");
+        static nodo los_reyes = new nodo("los reyes");
+        static nodo uruapan = new nodo("uruapan");
+        static nodo sahuayo = new nodo("sahuayo");
+        static nodo zamora = new nodo("zamora");
+        static nodo zacapu = new nodo("zacapu");
+        static nodo patzcuaro = new nodo("patzcuaro");
+        static nodo morelia = new nodo("morelia");
+        static nodo cd_hidalgo = new nodo("ciudad hidalgo");
         public logica()
         {
-            // aquila
-            nodo aquila = new nodo("aquila");
-            nodo maruata = new nodo("maruata");
-            nodo tepalcatepec = new nodo("tepalcatepec");
-            nodo apatzingan = new nodo("apatzingan");
-            nodo nueva_italia = new nodo("nueva italia");
-            nodo lazaro_cardenas = new nodo("lazaro cardenas");
-            nodo los_reyes = new nodo("los reyes");
-            nodo uruapan = new nodo("uruapan");
-            nodo sahuayo = new nodo("sahuayo");
-            nodo zamora = new nodo("zamora");
-            nodo zacapu = new nodo("zacapu");
-            nodo patzcuaro = new nodo("patzcuaro");
-            nodo morelia = new nodo("morelia");
-            nodo cd_hidalgo = new nodo("ciudad hidalgo");
+
+            // creacion de conexiones
 
             // vertices de aquila
             aquila.vecinos.Add(maruata);
@@ -117,7 +119,64 @@ namespace mapas_IA_5
             zamora.vecinos.Add(sahuayo);
             zamora.vecinos.Add(uruapan);
             zamora.vecinos.Add(zacapu);
+            // zamora - sahuayo
+            zamora.vertices.Add(new vertice(zamora, sahuayo, 3));
+            // zamora - uruapan
+            zamora.vertices.Add(new vertice(zamora, uruapan, 3));
+            // zamora - zacapu
+            zamora.vertices.Add(new vertice(zamora, zacapu, 4));
+
+            // vertices de zacapu
+            zacapu.vecinos.Add(zamora);
+            zacapu.vecinos.Add(patzcuaro);
+            zacapu.vecinos.Add(morelia);
+            // zacapu - zamora
+            zacapu.vertices.Add(new vertice(zacapu, zamora, 4));
+            // zacapu - patzcuaro
+            zacapu.vertices.Add(new vertice(zacapu, patzcuaro, 2));
+            // zacapu - morelia
+            zacapu.vertices.Add(new vertice(zacapu, morelia, 2));
+
+            // vertices de patzcuaro
+            patzcuaro.vecinos.Add(nueva_italia);
+            patzcuaro.vecinos.Add(zacapu);
+            patzcuaro.vecinos.Add(morelia);
+            // patz - zacapu
+            patzcuaro.vertices.Add(new vertice(patzcuaro, zacapu, 2));
+            // patz - nueva italia
+            patzcuaro.vertices.Add(new vertice(patzcuaro, nueva_italia, 3));
+            // patz - morelia
+            patzcuaro.vertices.Add(new vertice(patzcuaro, morelia, 2));
+
+            // vertices de morelia
+            morelia.vecinos.Add(zacapu);
+            morelia.vecinos.Add(patzcuaro);
+            morelia.vecinos.Add(cd_hidalgo);
+            // morelia - zacapu
+            morelia.vertices.Add(new vertice(morelia, zacapu, 2));
+            // morelia - patzcuaro
+            morelia.vertices.Add(new vertice(morelia, patzcuaro, 2));
+            // morelia - cd hidalgo
+            morelia.vertices.Add(new vertice(morelia, cd_hidalgo, 3));
+
+            // cd hidalgo
+            cd_hidalgo.vecinos.Add(morelia);
+            cd_hidalgo.vertices.Add(new vertice(cd_hidalgo, morelia, 2));
+        } // fin de constructor
+
+        // algoritmo de busqueda de profundidad
+        // # de nodos
+        int n = 14;
+        // lista de adyacencia
+        static List<nodo> listaAdyacencia = new List<nodo> { 
+            aquila, maruata, tepalcatepec, apatzingan, nueva_italia,
+            lazaro_cardenas, los_reyes, uruapan, sahuayo, zamora,
+            zacapu, patzcuaro, morelia, cd_hidalgo
+        };
+        public void busquedaProfundidad(nodo inicio)
+        {
+            bool[] nodosVisitados = new bool[n];
+            if (nodosVisitados[])
         }
-        
     }
 }
