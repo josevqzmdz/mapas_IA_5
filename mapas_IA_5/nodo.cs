@@ -15,7 +15,7 @@ namespace mapas_IA_5
         }
         public List<nodo> vecinos { get; set; }
         public List<vertice> vertices { get; set; }
-        public int distancia { get; set; }  
+        public int distancia { get; set; }
 
     }
 }
