@@ -16,6 +16,7 @@ namespace mapas_IA_5
 
         // inicializacion de los nodos
         static nodo aquila = new nodo("aquila");
+        
         static nodo maruata = new nodo("maruata");
         static nodo tepalcatepec = new nodo("tepalcatepec");
         static nodo apatzingan = new nodo("apatzingan");
@@ -180,7 +181,7 @@ namespace mapas_IA_5
         private void button1_Click(object sender, EventArgs e)
         {
             var resultado = logic.busquedaProfundidad(listaAdyacencia, patzcuaro);
-            Console.WriteLine(resultado);
+            Console.WriteLine(resultado.ToString());
         }
     }
 }

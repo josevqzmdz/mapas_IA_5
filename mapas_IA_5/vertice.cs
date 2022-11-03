@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace mapas_IA_5
 {
-    internal class vertice
+    public class vertice
     {
         nodo inicio { get; set; }
         nodo fin { get; set; }
