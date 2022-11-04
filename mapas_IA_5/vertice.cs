@@ -8,9 +8,9 @@ namespace mapas_IA_5
 {
     public class vertice
     {
-        nodo inicio { get; set; }
-        nodo fin { get; set; }
-        int distancia { get; set; } 
+        public nodo inicio { get; set; }
+        public nodo fin { get; set; }
+        public int distancia { get; set; } 
 
         public vertice(nodo inicio, nodo fin, int distancia)
         {

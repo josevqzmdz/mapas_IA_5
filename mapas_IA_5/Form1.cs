@@ -15,21 +15,20 @@ namespace mapas_IA_5
         logica logic = new logica();
 
         // inicializacion de los nodos
-        static nodo aquila = new nodo("aquila");
-        
-        static nodo maruata = new nodo("maruata");
-        static nodo tepalcatepec = new nodo("tepalcatepec");
-        static nodo apatzingan = new nodo("apatzingan");
-        static nodo nueva_italia = new nodo("nueva italia");
-        static nodo lazaro_cardenas = new nodo("lazaro cardenas");
-        static nodo los_reyes = new nodo("los reyes");
-        static nodo uruapan = new nodo("uruapan");
-        static nodo sahuayo = new nodo("sahuayo");
-        static nodo zamora = new nodo("zamora");
-        static nodo zacapu = new nodo("zacapu");
-        static nodo patzcuaro = new nodo("patzcuaro");
-        static nodo morelia = new nodo("morelia");
-        static nodo cd_hidalgo = new nodo("ciudad hidalgo");
+        public static nodo aquila = new nodo("aquila");
+        public static nodo maruata = new nodo("maruata");
+        public static nodo tepalcatepec = new nodo("tepalcatepec");
+        public static nodo apatzingan = new nodo("apatzingan");
+        public static nodo nueva_italia = new nodo("nueva italia");
+        public static nodo lazaro_cardenas = new nodo("lazaro cardenas");
+        public static nodo los_reyes = new nodo("los reyes");
+        public static nodo uruapan = new nodo("uruapan");
+        public static nodo sahuayo = new nodo("sahuayo");
+        public static nodo zamora = new nodo("zamora");
+        public static nodo zacapu = new nodo("zacapu");
+        public static nodo patzcuaro = new nodo("patzcuaro");
+        public static nodo morelia = new nodo("morelia");
+        public static nodo cd_hidalgo = new nodo("ciudad hidalgo");
 
         // lista de adyacencia
         public static List<nodo> listaAdyacencia = new List<nodo> {
@@ -181,7 +180,10 @@ namespace mapas_IA_5
         private void button1_Click(object sender, EventArgs e)
         {
             var resultado = logic.busquedaProfundidad(listaAdyacencia, patzcuaro);
-            Console.WriteLine(resultado.ToString());
+            foreach(var item in resultado)
+            {
+                Console.WriteLine(item.nombre + ", " );
+            }
         }
     }
 }

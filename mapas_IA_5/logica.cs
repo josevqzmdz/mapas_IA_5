@@ -25,10 +25,12 @@ namespace mapas_IA_5
         public List<nodo> busquedaProfundidad(List<nodo> grafo, nodo inicio)
         {
             List<nodo> nodosRecorridos = new List<nodo>();
-            if (grafo.Contains(inicio))
+            
+            if (!grafo.Contains(inicio))
             {
                 return nodosRecorridos;
             }
+            
 
             var stack = new Stack<nodo>();
             stack.Push(inicio);
@@ -46,7 +48,7 @@ namespace mapas_IA_5
                 {
                     if (!nodosRecorridos.Contains(vecino))
                     {
-                        stack.Push(vecino);
+                        stack.Push(vecino);                       
                     }
                 }
             }

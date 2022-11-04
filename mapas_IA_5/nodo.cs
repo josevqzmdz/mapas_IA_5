@@ -8,16 +8,15 @@ namespace mapas_IA_5
 {
     public class nodo
     {
-        string nombre { get; set; } 
-        public nodo(string nombre)
-        {
-            this.nombre = nombre;
-            vecinos = new List<nodo>();
-            vertices = new List<vertice>();
-        }
-        public List<nodo> vecinos { get; set; }
-        public List<vertice> vertices { get; set; }
-        public int distancia { get; set; }
+            public string nombre { get; set; } 
+            public nodo(string nombre)
+            {
+                this.nombre = nombre;
+                vecinos = new List<nodo>();
+                vertices = new List<vertice>();
+            }
+            public List<nodo> vecinos { get; set; }
+            public List<vertice> vertices { get; set; }
 
     }
 }
