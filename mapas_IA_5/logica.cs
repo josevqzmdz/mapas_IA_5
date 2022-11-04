@@ -48,7 +48,8 @@ namespace mapas_IA_5
                 {
                     if (!nodosRecorridos.Contains(vecino))
                     {
-                        stack.Push(vecino);                       
+                        stack.Push(vecino);
+                        
                     }
                 }
             }

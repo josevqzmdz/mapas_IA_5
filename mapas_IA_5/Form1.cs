@@ -36,6 +36,8 @@ namespace mapas_IA_5
             lazaro_cardenas, los_reyes, uruapan, sahuayo, zamora,
             zacapu, patzcuaro, morelia, cd_hidalgo
         };
+
+        public static List<vertice> listaVertices;
         public Form1()
         {
             InitializeComponent();
@@ -47,7 +49,7 @@ namespace mapas_IA_5
             // aquila - maruata
             aquila.vertices.Add(new vertice(aquila, maruata, 2));
             // aquila - tepalcatepec
-            aquila.vertices.Add(new vertice(aquila, tepalcatepec, 3));
+            aquila.vertices.Add(new vertice(aquila, tepalcatepec, 3));           
 
             // vertices de maruata
             maruata.vecinos.Add(aquila);
@@ -175,14 +177,15 @@ namespace mapas_IA_5
             // cd hidalgo
             cd_hidalgo.vecinos.Add(morelia);
             cd_hidalgo.vertices.Add(new vertice(cd_hidalgo, morelia, 2));
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             var resultado = logic.busquedaProfundidad(listaAdyacencia, patzcuaro);
-            foreach(var item in resultado)
+            foreach(var ciudad in resultado)
             {
-                Console.WriteLine(item.nombre + ", " );
+                Console.WriteLine( );
             }
         }
     }
