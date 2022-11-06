@@ -7,13 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.Json;
 
 namespace mapas_IA_5
 {
     public partial class Form1 : Form
     {
-        logica logic = new logica();
-
         // inicializacion de los nodos
         public static nodo aquila = new nodo("aquila");
         public static nodo maruata = new nodo("maruata");
@@ -29,15 +28,6 @@ namespace mapas_IA_5
         public static nodo patzcuaro = new nodo("patzcuaro");
         public static nodo morelia = new nodo("morelia");
         public static nodo cd_hidalgo = new nodo("ciudad hidalgo");
-
-        // lista de adyacencia
-        public static List<nodo> listaAdyacencia = new List<nodo> {
-            aquila, maruata, tepalcatepec, apatzingan, nueva_italia,
-            lazaro_cardenas, los_reyes, uruapan, sahuayo, zamora,
-            zacapu, patzcuaro, morelia, cd_hidalgo
-        };
-
-        public static List<vertice> listaVertices;
         public Form1()
         {
             InitializeComponent();
@@ -65,8 +55,10 @@ namespace mapas_IA_5
         {
             foreach (var n in aquila.busquedaProfundidad())
             {
+                Console.WriteLine(n);
                 Console.WriteLine($"De {n.Item1.nombre} hasta {n.Item2.nombre} : {n.Item3}");
-            }
+                Console.WriteLine(JsonSerializer.Deserialize("{ 'hola': 'test'}"));
+            }          
         }
     }
 }
