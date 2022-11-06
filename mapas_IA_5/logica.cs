@@ -30,7 +30,6 @@ namespace mapas_IA_5
             {
                 return nodosRecorridos;
             }
-            
 
             var stack = new Stack<nodo>();
             stack.Push(inicio);
@@ -43,13 +42,13 @@ namespace mapas_IA_5
                     continue;
                 }
                 nodosRecorridos.Add(vertice);
+                
 
                 foreach(var vecino in grafo)
                 {
                     if (!nodosRecorridos.Contains(vecino))
                     {
                         stack.Push(vecino);
-                        
                     }
                 }
             }
